@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #myCanvas{
+                border: 4px solid gray;
+            }
+        </style>
+    </head>
+    <body>
+        <img id="yasuo" width="192" height="108"
+            src="yasuo.jpg">
+        <canvas id='myCanvas' width="300" height="300"></canvas>
+    </body>
+    <script>
+        /** @type {CanvasRenderingContext2D} */
+        window.onload = function() {
+        const canvas = document.querySelector('#myCanvas');
+        const ctx = canvas.getContext("2d");
+        const img = document.querySelector("#yasuo");
+        const x = 30;
+        const y = 30;
+        const width = 192;
+        const height = 108;
+        ctx.drawImage(img, x, y, width, height);
+      };
+    </script>
+</html>

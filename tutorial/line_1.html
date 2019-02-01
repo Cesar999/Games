@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="578" height="200"></canvas>
+    <script>
+      var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+
+      // butt line cap (top line)
+      context.beginPath();
+      context.moveTo(200, canvas.height / 2 - 50);
+      context.lineTo(canvas.width - 200, canvas.height / 2 - 50);
+      context.lineWidth = 20;
+      context.strokeStyle = '#0000ff';
+      context.lineCap = 'butt';
+      context.stroke();
+
+      // round line cap (middle line)
+      context.beginPath();
+      context.moveTo(200, canvas.height / 2);
+      context.lineTo(canvas.width - 200, canvas.height / 2);
+      context.lineWidth = 20;
+      context.strokeStyle = '#0000ff';
+      context.lineCap = 'round';
+      context.stroke();
+
+      // square line cap (bottom line)
+      context.beginPath();
+      context.moveTo(200, canvas.height / 2 + 50);
+      context.lineTo(canvas.width - 200, canvas.height / 2 + 50);
+      context.lineWidth = 20;
+      context.strokeStyle = '#0000ff';
+      context.lineCap = 'square';
+      context.stroke();
+    </script>
+  </body>
+</html>           
+
+<!-- To draw a line using HTML5 Canvas, we can use the beginPath(), moveTo(), lineTo(), and stroke() methods.
+
+First, we can use the beginPath() method to declare that we are about to draw a new path.  Next, we can use the moveTo() method to position the context point (i.e. drawing cursor), and then use the lineTo() method to draw a straight line from the starting position to a new position.  Finally, to make the line visible, we can apply a stroke to the line using stroke().  Unless otherwise specified, the stroke color is defaulted to black. -->
+<!-- 
+To define the width of an HTML5 Canvas line, we can use the lineWidth property of the canvas context.  The lineWidth property must be set before calling stroke(). -->
+<!-- To set the color of an HTML5 Canvas line, we can use the strokeStyle property of the canvas context, which can be set to a color string such as red, green, or blue, a hex value such as #FF0000 or #555, or an RGB value such as rgb(255, 0, 0). -->
+<!-- To add a cap to an HTML5 Canvas line, we can use the lineCap property. Lines can have one of three cap styles: butt, round, or square. Unless otherwise specified, HTML5 Canvas lines are defaulted with the butt cap style.  The lineCap property must be set before calling stroke(). -->
